@@ -1,0 +1,23 @@
+services:
+  shell:
+    build: ./shell
+    ports:
+      - "4208:4208"
+    container_name: shell
+    image: mtaptx/angular16-mf-shell
+    links:
+    - mfe1
+    - mfe2
+    
+  mfe1:
+    build: ./mfe1
+    ports:
+      - "4209:4209"
+    container_name: mfe1
+    image: mtaptx/angular16-mf-mfe1
+  mfe2:
+    build: ./mfe2
+    ports:
+      - "4210:4210"  
+    container_name: "mfe2"
+    image: mtaptx/angular16-mf-mfe2
